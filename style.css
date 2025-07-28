@@ -44,3 +44,20 @@ h1 {
   border: 3px solid #fff;
   box-shadow: 0 0 12px #000;
 }
+
+#search-results {
+  margin-top: 20px;
+}
+
+.search-result {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.search-result img {
+  width: 120px;
+  height: 90px;
+  margin-right: 10px;
+}
