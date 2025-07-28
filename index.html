@@ -7,7 +7,15 @@
 </head>
 <body>
   <h1>Pong Game</h1>
+  <div id="music-controls">
+    <input type="text" id="search-query" placeholder="Search for a song">
+    <button id="search-button">Search</button>
+  </div>
+  <div id="search-results"></div>
   <canvas id="pong" width="800" height="500"></canvas>
+  <canvas id="visualizer" width="800" height="100"></canvas>
+  <audio id="audio" crossorigin="anonymous"></audio>
+  <script src="https://unpkg.com/ytdl-core-browser@latest/dist/ytdl-core-browser.min.js"></script>
   <script src="game.js"></script>
 </body>
 </html>

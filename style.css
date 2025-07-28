@@ -16,3 +16,48 @@ h1 {
   border: 3px solid #fff;
   box-shadow: 0 0 12px #000;
 }
+
+#music-controls {
+  margin-top: 20px;
+}
+
+#youtube-url {
+  padding: 10px;
+  width: 300px;
+  border: 2px solid #fff;
+  background: #333;
+  color: #fff;
+}
+
+#play-button {
+  padding: 10px 20px;
+  background: #f00;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#visualizer {
+  background: #222;
+  display: block;
+  margin: 0 auto;
+  border: 3px solid #fff;
+  box-shadow: 0 0 12px #000;
+}
+
+#search-results {
+  margin-top: 20px;
+}
+
+.search-result {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.search-result img {
+  width: 120px;
+  height: 90px;
+  margin-right: 10px;
+}
