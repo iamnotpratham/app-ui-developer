@@ -18,6 +18,8 @@ let ballX = canvas.width / 2 - BALL_SIZE / 2;
 let ballY = canvas.height / 2 - BALL_SIZE / 2;
 let ballVelX = BALL_SPEED * (Math.random() > 0.5 ? 1 : -1);
 let ballVelY = BALL_SPEED * (Math.random() * 2 - 1);
+let playerScore = 0;
+let aiScore = 0;
 
 // Mouse control
 canvas.addEventListener('mousemove', (e) => {
@@ -97,7 +99,11 @@ function update() {
   }
 
   // Ball out of bounds (left or right)
-  if (ballX < 0 || ballX + BALL_SIZE > canvas.width) {
+if (ballX < 0) {
+    aiScore++;
+    resetBall();
+} else if (ballX + BALL_SIZE > canvas.width) {
+    playerScore++;
     resetBall();
   }
 
@@ -109,7 +115,7 @@ function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   // Draw middle line
-  ctx.strokeStyle = "#666";
+ctx.strokeStyle = "#FFFF00";
   ctx.setLineDash([10, 10]);
   ctx.beginPath();
   ctx.moveTo(canvas.width / 2, 0);
@@ -118,9 +124,15 @@ function draw() {
   ctx.setLineDash([]);
 
   // Draw paddles and ball
-  drawRect(PLAYER_X, playerY, PADDLE_WIDTH, PADDLE_HEIGHT, "#fff");
-  drawRect(AI_X, aiY, PADDLE_WIDTH, PADDLE_HEIGHT, "#fff");
-  drawBall(ballX, ballY, BALL_SIZE, "#fff");
+drawRect(PLAYER_X, playerY, PADDLE_WIDTH, PADDLE_HEIGHT, "#FF0000");
+drawRect(AI_X, aiY, PADDLE_WIDTH, PADDLE_HEIGHT, "#0000FF");
+drawBall(ballX, ballY, BALL_SIZE, "#FFFF00");
+
+// Draw scores
+ctx.fillStyle = "#fff";
+ctx.font = "30px Arial";
+ctx.fillText(playerScore, canvas.width / 4, 50);
+ctx.fillText(aiScore, 3 * canvas.width / 4, 50);
 }
 
 function gameLoop() {
